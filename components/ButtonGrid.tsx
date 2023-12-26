@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, View } from 'react-native';
+import { FlatList, StyleSheet, View } from 'react-native';
 import { buttons } from '../utils/buttons';
 import { Button } from '../utils/types';
 import SkillButton from './SkillButton';
@@ -10,11 +10,11 @@ interface Props {
 
 const ButtonGrid = ({ addSkill }: Props) => {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <View style={{ flex: 1 }} />
+    <View style={styles.container}>
+      <View style={styles.spacer} />
       <FlatList
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ justifyContent: 'center', alignItems: 'center' }}
+        contentContainerStyle={styles.contentContainerStyle}
         numColumns={6}
         data={buttons}
         scrollEnabled={true}
@@ -25,3 +25,9 @@ const ButtonGrid = ({ addSkill }: Props) => {
 };
 
 export default React.memo(ButtonGrid);
+
+const styles = StyleSheet.create({
+  container: { flex: 1, justifyContent: 'center', alignItems: 'center' },
+  spacer: { flex: 1 },
+  contentContainerStyle: { justifyContent: 'center', alignItems: 'center' },
+});

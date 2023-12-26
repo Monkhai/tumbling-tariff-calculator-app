@@ -1,9 +1,8 @@
-import { Keyboard, StyleSheet, Text, TextInput, View } from 'react-native';
+import * as NavigationBar from 'expo-navigation-bar';
 import React, { useEffect, useState } from 'react';
+import { Keyboard, Platform, StyleSheet, TextInput } from 'react-native';
 import { Row, Table } from 'react-native-reanimated-table';
 import Colors from '../utils/Colors';
-import { rowStyle } from '../utils/globalStyles';
-import * as NavigationBar from 'expo-navigation-bar';
 import MemoizedTextInput from './MemoizedTextInput';
 
 interface Props {
@@ -23,7 +22,9 @@ const SumTable = ({ totalDD, eScore, setEScore, totalScore, setTotalScore }: Pro
     const keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', () => {
       eScoreRef.current && eScoreRef.current.blur();
       totalScoreRef.current && totalScoreRef.current.blur();
-      NavigationBar.setVisibilityAsync('hidden');
+      if (Platform.OS === 'android') {
+        NavigationBar.setVisibilityAsync('hidden');
+      }
     });
 
     return () => {

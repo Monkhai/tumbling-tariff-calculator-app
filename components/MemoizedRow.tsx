@@ -1,9 +1,9 @@
-import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
+import { StyleSheet } from 'react-native';
+import { Dropdown } from 'react-native-element-dropdown';
 import { Row } from 'react-native-reanimated-table';
 import Colors from '../utils/Colors';
 import { Skill } from '../utils/types';
-import { Dropdown } from 'react-native-element-dropdown';
 
 interface Props {
   skill: Skill;
@@ -53,34 +53,14 @@ const MemoizedRow = ({ skill, index, handleBonusChange }: Props) => {
           maxHeight={10}
           valueField={'value'}
           placeholder="0.0"
-          placeholderStyle={{ color: Colors.accent, textAlign: 'right', paddingRight: 10 }}
-          selectedTextStyle={{ color: Colors.accent, textAlign: 'right', paddingRight: 10 }}
+          placeholderStyle={styles.dropdownPlaceholder}
+          selectedTextStyle={styles.dropdownPlaceholder}
           activeColor="transparent"
           iconColor={Colors.accent}
           mode="modal"
-          containerStyle={{
-            width: 80,
-            height: 250,
-            borderWidth: 1,
-            borderColor: Colors.accent,
-            backgroundColor: Colors.background,
-            top: -125,
-          }}
-          itemContainerStyle={{
-            backgroundColor: Colors.background,
-            borderWidth: 1,
-            borderColor: Colors.accent,
-            height: 50,
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-          itemTextStyle={{
-            color: Colors.accent,
-            justifyContent: 'center',
-            textAlign: 'center',
-            textAlignVertical: 'center',
-            height: '100%',
-          }}
+          containerStyle={styles.dropdownContainer}
+          itemContainerStyle={styles.dropdownItemContainer}
+          itemTextStyle={styles.dropdownItemText}
           showsVerticalScrollIndicator={false}
           autoScroll={false}
         />,
@@ -94,4 +74,29 @@ export default React.memo(MemoizedRow);
 const styles = StyleSheet.create({
   style: { height: 35, borderBottomWidth: 1, borderColor: Colors.accent, width: '90%' },
   textStyle: { color: Colors.accent, textAlign: 'center' },
+
+  dropdownContainer: {
+    width: 80,
+    height: 250,
+    borderWidth: 1,
+    borderColor: Colors.accent,
+    backgroundColor: Colors.background,
+    top: -125,
+  },
+  dropdownItemContainer: {
+    backgroundColor: Colors.background,
+    borderWidth: 1,
+    borderColor: Colors.accent,
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  dropdownItemText: {
+    color: Colors.accent,
+    justifyContent: 'center',
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    height: '100%',
+  },
+  dropdownPlaceholder: { color: Colors.accent, textAlign: 'right', paddingRight: 10 },
 });

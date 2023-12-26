@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
+import { StyleSheet } from 'react-native';
 import { Row } from 'react-native-reanimated-table';
 import Colors from '../utils/Colors';
 
