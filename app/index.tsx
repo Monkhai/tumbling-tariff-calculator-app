@@ -1,13 +1,16 @@
+I18nManager.allowRTL(false);
+I18nManager.forceRTL(false);
+
+import Constants from 'expo-constants';
 import { StatusBar } from 'expo-status-bar';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { Platform, SafeAreaView, StyleSheet, View } from 'react-native';
+import { I18nManager, Platform, StyleSheet, View } from 'react-native';
 import BottomButtons from '../components/BottomButtons';
 import ButtonGrid from '../components/ButtonGrid';
 import SkillTable from '../components/SkillTable';
 import SumTable from '../components/SumTable';
 import Colors from '../utils/Colors';
 import { Button, Skill } from '../utils/types';
-import Constants from 'expo-constants';
 
 const index = () => {
   const [totalDD, setTotalDD] = useState(0.0);

@@ -2,7 +2,7 @@
   "expo": {
     "name": "tumbling-tariff-calculator-app",
     "slug": "TumblingDifficultyCalculator",
-    "version": "3.0.1",
+    "version": "3.0.2",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "scheme": "myapp",
@@ -16,14 +16,14 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.yohaiwiener.tumblingddcalculatorapp",
-      "buildNumber": "7"
+      "buildNumber": "8"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#323B40"
       },
-      "versionCode": 7,
+      "versionCode": 8,
       "package": "com.yohaiwiener.tumblingddcalculatorapp"
     },
     "androidNavigationBar": {

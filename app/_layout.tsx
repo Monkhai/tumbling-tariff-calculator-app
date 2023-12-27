@@ -1,12 +1,12 @@
-import { I18nManager, StyleSheet, Text, View } from 'react-native';
-import React from 'react';
+I18nManager.allowRTL(false);
+I18nManager.forceRTL(false);
+
 import { Stack } from 'expo-router';
+import React from 'react';
+import { I18nManager } from 'react-native';
 import Colors from '../utils/Colors';
 
 const _layout = () => {
-  I18nManager.allowRTL(false);
-  I18nManager.forceRTL(false);
-
   return (
     <Stack
       screenOptions={{
@@ -19,5 +19,3 @@ const _layout = () => {
 };
 
 export default _layout;
-
-const styles = StyleSheet.create({});
