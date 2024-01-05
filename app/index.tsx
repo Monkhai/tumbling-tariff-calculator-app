@@ -4,7 +4,7 @@ I18nManager.forceRTL(false);
 import Constants from 'expo-constants';
 import { StatusBar } from 'expo-status-bar';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { I18nManager, Platform, StyleSheet, View } from 'react-native';
+import { I18nManager, Keyboard, Platform, Pressable, StyleSheet, View } from 'react-native';
 import BottomButtons from '../components/BottomButtons';
 import ButtonGrid from '../components/ButtonGrid';
 import SkillTable from '../components/SkillTable';
@@ -74,7 +74,7 @@ const index = () => {
   }, [OGSkills]);
 
   return (
-    <View style={styles.container}>
+    <Pressable onPress={() => Keyboard.dismiss()} style={styles.container}>
       <StatusBar hidden={Platform.OS === 'android' ? true : false} />
 
       <SkillTable skills={skills} handleBonusChange={handleBonus} />
@@ -84,7 +84,7 @@ const index = () => {
       <ButtonGrid addSkill={addSkill} />
 
       <BottomButtons onClear={clearSkills} onDelete={deleteSkill} />
-    </View>
+    </Pressable>
   );
 };
 
